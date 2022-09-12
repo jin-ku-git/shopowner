@@ -1,0 +1,161 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        multiDexEnabled true
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64","x86"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        /**
+         * 设置你的keystore相关
+         * demo中只是一个示例，使用时请根据实际情况进行配置
+         */
+        debug {
+            keyAlias 'youwu'
+            keyPassword 'youwu2021'
+            storeFile file('../youwu.jks')
+            storePassword 'youwu2021'
+        }
+        release {
+            keyAlias 'youwu'
+            keyPassword 'youwu2021'
+            storeFile file('../youwu.jks')
+            storePassword 'youwu2021'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+    packagingOptions {
+        exclude 'AndroidManifest.xml'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //修改apk 的 文件名
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def date = new Date().format("yyyy_MM_dd_hh_mm", TimeZone.getTimeZone("GMT+08"))
+            if (variant.buildType.name == "debug") {
+                output.outputFileName = "${date}${android.defaultConfig.applicationId}${android.defaultConfig.versionName}_debug_${android.defaultConfig.versionCode}.apk"
+            } else if (variant.buildType.name == "release") {
+                output.outputFileName = "${date}${android.defaultConfig.applicationId}${android.defaultConfig.versionName}_release_${android.defaultConfig.versionCode}.apk"
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //support
+    implementation rootProject.ext.support["design"]
+    //下拉刷新,上拉加载
+    implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    //底部tabBar
+    implementation('me.majiajie:pager-bottom-tab-strip:2.2.5') {
+        exclude group: 'com.android.support'
+    }
+    implementation project(path: ':update')
+    implementation project(path: ':mvvmhabit')
+    implementation project(path: ':pickerview')
+    implementation project(path: ':baselibrary')
+    //MVVMHabit
+    //    implementation rootProject.ext.dependencies.MVVMHabit
+    //内存泄漏测试
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+
+    //下拉刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    //1.0.5及以前版本的老用户升级需谨慎，API改动过大
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'
+
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    implementation 'com.blankj:utilcodex:1.29.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //XUI框架
+    implementation 'com.github.xuexiangjys:XUI:1.1.8'
+    //提示弹窗
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    implementation 'com.github.mamumu:mmDialog:1.2.0'
+    //侧滑返回
+    implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
+    //弹窗
+    implementation 'com.lxj:xpopup:2.0.2'
+    //XQRCode二维码扫描
+    implementation 'com.github.xuexiangjys:XQRCode:1.1.0'
+    implementation 'com.blankj:utilcodex:1.29.0'
+    //阿里JSON
+    implementation 'com.alibaba:fastjson:1.2.75'
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    //扫描二维码
+    implementation 'com.google.zxing:core:3.4.0'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+
+    implementation 'com.kyleduo.switchbutton:library:2.0.2'
+
+    //添加material库
+    implementation 'com.google.android.material:material:1.2.1'
+
+    //网络请求
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    //MQTT
+
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+
+
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+    //商米打印
+    implementation 'com.sunmi:sunmiui:1.1.27'
+
+    implementation 'com.sunmi:printerlibrary:1.0.18'
+
+    implementation 'com.youth.banner:banner:1.4.9'
+
+    implementation 'leavesc.hello:Monitor:1.0.1'
+    implementation 'org.apache.httpcomponents:httpclient-android:4.3.5'
+    // 双列表联动
+    implementation 'com.kunminx.linkage:linkage-recyclerview:1.9.2'
+
+}

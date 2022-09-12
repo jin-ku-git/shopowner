@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">先每餐饮收银</string>
+
+    <string name="choice_vip">选择会员</string>
+    <string name="cancel_vip">取消选择</string>
+
+    <string name="vip_details">会员信息</string>
+    <string name="vip_search">搜索会员</string>
+    <string name="ConfirmWriteOff">确认核销</string>
+    <string name="WrittenOff">已核销</string>
+    <string name="ToReturn">去退货</string>
+    <string name="Receiving">收货</string>
+    <string name="ReturnDetails">退货详情</string>
+    <string name="TakeOrder">取单</string>
+    <string name="PendingOrder">挂单</string>
+    <string name="main_null"></string>
+
+
+
+    <!--instruction-->
+    <string name="toast_1">事务打印请使用Aidl模式!</string>
+    <string name="toast_2">服务已断开!</string>
+    <string name="toast_3">蓝牙设备不可用</string>
+    <string name="toast_4">未检测到蓝牙设备，请打开蓝牙</string>
+    <string name="toast_5">未发现InnterPrinter!</string>
+    <string name="toast_6">蓝牙连接失败!</string>
+    <string name="toast_7">AIDL 暂时只打印单个二维码</string>
+    <string name="toast_8">两个二维码尺寸最大为7</string>
+    <string name="toast_9">请设置打印机为黑标模式!</string>
+    <string name="toast_10">条码类型或内容不正确!</string>
+    <string name="input_order">请输入指令:</string>
+    <string name="multithread">多线程并发打印</string>
+    <string name="multithread_stop">点击停止</string>
+    <string name="pic_pos">图片排列方式</string>
+    <string name="pic_hor">横向</string>
+    <string name="pic_ver">纵向</string>
+    <string name="pic_mode">图片打印方式</string>
+    <string name="pic_mode1">光栅位图</string>
+    <string name="pic_mode2">8点单密度</string>
+    <string name="pic_mode3">8点双密度</string>
+    <string name="pic_mode4">24点单密度</string>
+    <string name="pic_mode5">24点双密度</string>
+    <string name="style_width">倍宽</string>
+    <string name="style_height">倍高</string>
+</resources>

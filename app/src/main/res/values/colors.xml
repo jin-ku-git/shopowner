@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColor">#202020</color>
+    <color name="textColorHint">#A0A0A0</color>
+    <color name="textColorVice">#6C6C6C</color>
+    <color name="viewLineColor">#F0F0F0</color>
+
+
+    <color name="main_color">#2196FF</color>
+    <color name="main_yellow">#F7B500</color>
+    <color name="main_green">#6DD400</color>
+    <color name="main_white">#FFFFFF</color>
+    <color name="main_black">#000000</color>
+    <color name="main_black_25">#40000000</color>
+    <color name="main_black_50">#80000000</color>
+    <color name="main_black_85">#BF000000</color>
+    <color name="main_black_54">#545454</color>
+    <color name="main_black_5B">#5B5B5B</color>
+    <color name="main_black_32">#292A32</color>
+    <color name="main_touming">#00000000</color>
+    <color name="text_main_top">#8B95AE</color>
+    <color name="text_39">#393939</color>
+    <color name="color_hui">#F4F8FB</color>
+    <color name="color_hui_777">#777777</color>
+    <color name="color_red">#F80000</color>
+    <color name="color_hui_f8fcff">#F8FCFF</color>
+    <color name="color_hui_d4">#D4D4D4</color>
+    <color name="color_molv">#58A55C</color>
+    <color name="color_molan">#5087EC</color>
+    <color name="color_molv_d7">#72CDD7</color>
+
+    <color name="color_main">#2196FF</color>
+
+
+
+
+    <color name="main_hue2">#F25D5F</color>
+    <color name="main_hue">#B99E6A</color>
+    <color name="main_hue_click">#80F25D5F</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#e0000000</color>
+    <color name="null_gray">#ededed</color>
+    <color name="font_black"> #2f2f2f</color>
+    <color name="gray_a9">#a9a9a9</color>
+
+
+    <color name="color_lv">#FF4BB25D</color>
+    <color name="white_alpha80">#ccffffff</color>
+    <color name="color_lv_qian">#34CC5F</color>
+    <color name="color_huang">#FFFF8C00</color>
+
+</resources>

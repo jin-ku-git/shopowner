@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/size_260dp"
+        android:layout_height="@dimen/size_260dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/radius_white"
+        >
+        <com.youwu.shopowner.toast.CustomView
+            android:id="@+id/custom_view"
+            android:layout_width="@dimen/size_175dp"
+            android:layout_height="@dimen/size_175dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="核销成功"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_15sp"
+            android:textColor="@color/main_black"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/size_15dp"
+
+            />
+
+    </LinearLayout>
+
+
+
+</FrameLayout>
